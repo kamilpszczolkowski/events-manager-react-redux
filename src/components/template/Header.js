@@ -1,7 +1,16 @@
 import React from "react";
+import Title from "./Title";
+import Navigation from "./Navigation";
 
-const Header = props => {
-  return <h2>Placeholder: Header</h2>;
+const Header = ({ activeSite }) => {
+  return (
+    <header>
+      <div className="container">
+        <Title />
+        <Navigation activeSite={activeSite} />
+      </div>
+    </header>
+  );
 };
 
 export default Header;
