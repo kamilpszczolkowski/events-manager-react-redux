@@ -7,9 +7,13 @@ class AddEvent extends Component {
   }
 }
 
-function mapStateToProps(state) {}
+function mapStateToProps(state) {
+  return {};
+}
 
-function mapDispatchToProps(dispatch) {}
+function mapDispatchToProps(dispatch) {
+  return {};
+}
 
 export default connect(
   mapStateToProps,
