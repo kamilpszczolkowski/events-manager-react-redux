@@ -6,7 +6,7 @@ class BrowseEvents extends Component {
   render() {
     return (
       <Template activeSite="browseEvents">
-        <h2>Browse event page</h2>
+
       </Template>
     );
   }

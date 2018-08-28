@@ -1,10 +1,7 @@
 import React, { Component } from "react";
+import { InputField } from "./common";
 
 export default class SearchField extends Component {
-  handleInputChange = event => {
-    this.props.textChange(event.target.value);
-  };
-
   handleSubmit = event => {
     event.preventDefault();
     window.location.replace("#/events");
@@ -15,12 +12,11 @@ export default class SearchField extends Component {
       <section className="search">
         <h2>Znajdź najciekawsze wydarzenia w Polsce</h2>
         <form onSubmit={this.handleSubmit}>
-          <input
-            id="mainSearch"
-            type="text"
+          <InputField
             placeholder="Czego szukasz?"
+            id="mainSearch"
             value={this.props.textValue}
-            onChange={this.handleInputChange}
+            onChangeFunc={this.props.textChange}
           />
           <input id="mainBttnSearch" type="submit" value="" />
         </form>
