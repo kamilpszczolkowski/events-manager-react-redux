@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 
 export default class SearchField extends Component {
-  handleInputChange = (event) => {
+  handleInputChange = event => {
     this.props.textChange(event.target.value);
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    window.location.replace("#/events");
   };
 
   render() {
     return (
       <section className="search">
         <h2>Znajdź najciekawsze wydarzenia w Polsce</h2>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             id="mainSearch"
             type="text"
