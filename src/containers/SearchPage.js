@@ -1,26 +1,33 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Template } from "../components/template";
+import { SearchPageBackground, SearchField } from "../components";
+import { searchTextChanged } from "../store/filters/actions";
+import *  as filtersSelectors from "../store/filters/reducer";
 
 class SearchPage extends Component {
   render() {
     return (
       <Template activeSite="main">
-        <h2>Search Page</h2>
+        <SearchPageBackground />
+        <SearchField
+          textValue={this.props.searchText}
+          textChange={this.props.searchTextChanged}
+        />
       </Template>
     );
   }
 }
 
 function mapStateToProps(state) {
-  return {};
+  return { searchText: filtersSelectors.getCurrentSearchText(state)};
 }
 
-function mapDispatchToProps(dispatch) {
-  return {};
+function mapDispatchToProps() {
+  return { searchTextChanged };
 }
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps()
 )(SearchPage);
