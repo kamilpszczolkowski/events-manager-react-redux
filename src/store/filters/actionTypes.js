@@ -1,1 +1,2 @@
 export const SEARCH_TEXT_CHANGED = "filters.SEARCH_TEXT_CHANGED";
+export const SORT_METHOD_CHANGED = "filters.SORT_METHOD_CHANGED";
