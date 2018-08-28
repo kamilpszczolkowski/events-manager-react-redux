@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Template} from "../components/template";
+import { Template } from "../components/template";
 
 class AddEvent extends Component {
   render() {
     return (
-        <Template activeSite="addEvents">
-            <h2>Add Event page</h2>
-        </Template>
+      <Template activeSite="addEvents">
+        <h2>Add Event page</h2>
+      </Template>
     );
   }
 }

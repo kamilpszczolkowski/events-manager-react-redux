@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Template } from "../components/template";
 
 class SearchPage extends Component {
   render() {
-    return <h2>Placeholder: Searchpage</h2>;
+    return (
+      <Template activeSite="main">
+        <h2>Search Page</h2>
+      </Template>
+    );
   }
 }
 

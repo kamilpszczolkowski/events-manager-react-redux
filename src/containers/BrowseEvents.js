@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Template } from "../components/template";
 
 class BrowseEvents extends Component {
   render() {
-    return <h2>Placeholder: BrowseEvents</h2>;
+    return (
+      <Template activeSite="browseEvents">
+        <h2>Browse event page</h2>
+      </Template>
+    );
   }
 }
 

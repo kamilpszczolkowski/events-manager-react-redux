@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Template } from "../components/template";
 
 class SingleEvent extends Component {
   render() {
-    return <h2>Placeholder: Single event page</h2>;
+    return (
+      <Template activeSite="singleEvent">
+        <h2>Single event page</h2>
+      </Template>
+    );
   }
 }
 
