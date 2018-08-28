@@ -9,7 +9,7 @@ const Template = ({ activeSite, children }) => {
       <main>
         <div className="clearFix container">{children}</div>
       </main>
-      <Footer mainSite={activeSite} />
+      <Footer activeSite={activeSite} />
     </div>
   );
 };
