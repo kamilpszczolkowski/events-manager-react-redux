@@ -1,0 +1,1 @@
+export const SEARCH_TEXT_CHANGED = "filters.SEARCH_TEXT_CHANGED";
