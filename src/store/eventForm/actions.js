@@ -17,3 +17,23 @@ export const eventEditingRequest = () => {
     type: types.EVENT_CHANGE_REQUESTED
   };
 };
+
+export const eventUpdated = (eventData, eventId) => {
+  return dispatch => {
+    FirebaseService.changeEvent(
+      () => {
+        dispatch({ type: types.EVENT_UPDATED });
+      },
+      eventData,
+      eventId
+    );
+  };
+};
+
+export const eventDeleted = eventId => {
+  return dispatch => {
+    FirebaseService.deleteEvent(() => {
+      dispatch({ type: types.EVENT_DELETED });
+    }, eventId);
+  };
+};

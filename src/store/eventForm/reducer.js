@@ -11,6 +11,10 @@ export default function reduce(state = initialState, action = {}) {
       return { ...state, eventFetched: action.event };
     case types.EVENT_CHANGE_REQUESTED:
       return { ...state, editingMode: true };
+    case types.EVENT_UPDATED:
+      return initialState;
+    case types.EVENT_DELETED:
+      return initialState;
     default:
       return initialState;
   }
