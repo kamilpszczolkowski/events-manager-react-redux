@@ -1,18 +1,25 @@
 import * as types from "./actionTypes";
 
 const initialState = {
-  eventFetched: {}
+  eventFetched: {},
+  editingMode: false
 };
 
 export default function reduce(state = initialState, action = {}) {
   switch (action.type) {
     case types.EVENT_FETCHED:
       return { ...state, eventFetched: action.event };
+    case types.EVENT_CHANGE_REQUESTED:
+      return { ...state, editingMode: true };
     default:
       return initialState;
   }
 }
 
 export function getEventFetched(state) {
-    return state.eventForm.eventFetched;
+  return state.eventForm.eventFetched;
+}
+
+export function checkIfEventIsEdited(state) {
+  return state.eventForm.editingMode;
 }

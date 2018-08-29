@@ -11,3 +11,9 @@ export const eventFetched = eventId => {
     }, eventId);
   };
 };
+
+export const eventEditingRequest = () => {
+  return {
+    type: types.EVENT_CHANGE_REQUESTED
+  };
+};
