@@ -64,13 +64,11 @@ export function getEventsFetched(state) {
   const searchPhraseLoCase = state.filters.searchText.toLowerCase();
   if (searchPhraseLoCase !== "") {
     filteredArray = sortedArray.filter(el => {
-      if (el.name.toLowerCase().indexOf(searchPhraseLoCase) !== -1) return true;
-      if (el.descShort.toLowerCase().indexOf(searchPhraseLoCase) !== -1)
-        return true;
-      if (el.type.toLowerCase().indexOf(searchPhraseLoCase) !== -1) return true;
-      if (el.place.toLowerCase().indexOf(searchPhraseLoCase) !== -1)
-        return true;
-      return false;
+      return el.name.toLowerCase().indexOf(searchPhraseLoCase) !== -1 ||
+          el.descShort.toLowerCase().indexOf(searchPhraseLoCase) !== -1 ||
+          el.type.toLowerCase().indexOf(searchPhraseLoCase) !== -1 ||
+          el.place.toLowerCase().indexOf(searchPhraseLoCase) !== -1;
+
     });
   } else filteredArray = sortedArray;
   return filteredArray;
