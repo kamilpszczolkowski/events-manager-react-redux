@@ -356,6 +356,13 @@ footer {
 .singleElement:hover {
   background-color: rgba(232, 186, 62, 0.6); }
 
+#searchInevents {
+  margin: 15px auto 10px auto;
+  width: 700px;
+  height: 30px;
+  padding-left: 4px;
+  display: block; }
+
 .sortPanel {
   width: 700px;
   margin: 5px auto;
@@ -425,14 +432,6 @@ footer {
     color: orangered;
     width: 15px;
     transform: rotate(-90deg); }
-  .sortPanel #searchInevents {
-    float: left;
-    width: 668px;
-    height: 30px;
-    padding-left: 4px; }
-    @media (max-width: 730px) {
-      .sortPanel #searchInevents {
-        width: 100%; } }
   .sortPanel #serachIcon {
     margin-top: -1px;
     border-radius: 4px;
