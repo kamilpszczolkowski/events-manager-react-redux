@@ -19,9 +19,9 @@ export default function reduce(state = initialState, action = {}) {
 }
 
 export function getEventFetched(state) {
-  return state.eventForm.eventFetched;
+  return state.singleEvent.eventFetched;
 }
 
 export function checkIfEventIsEdited(state) {
-  return state.eventForm.editingMode;
+  return state.singleEvent.editingMode;
 }
