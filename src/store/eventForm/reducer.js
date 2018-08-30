@@ -1,9 +1,8 @@
 import * as types from "./actionTypes";
-import { EVENT_CREATED } from "./actionTypes";
 
 const initialState = {
   event: {
-    date: ['',''],
+    date: ["", ""],
     desc: "",
     descShort: "",
     googleGeoLoc: ["19.025382300000047", "50.23185869999999"],
@@ -15,7 +14,9 @@ const initialState = {
     type: ""
   },
   formValidErrors: [],
-  eventSendSuccess: false
+  eventSendSuccess: false,
+  editedEvent: false,
+  editingFinished: false
 };
 
 export default function reduce(state = initialState, action = {}) {
@@ -32,6 +33,10 @@ export default function reduce(state = initialState, action = {}) {
       return { ...state, formValidErrors: action.validationErrors };
     case types.NEW_EVENT_CREATE:
       return initialState;
+    case types.START_EVENT_EDITING:
+      return { ...state, event: action.event, editedEvent: action.id };
+    case types.EVENT_EDITING_FINISHED:
+      return { ...state, editingFinished: true };
     default:
       return initialState;
   }
@@ -47,4 +52,12 @@ export function getValidationErrors(state) {
 
 export function getEventSendConfirm(state) {
   return state.eventForm.eventSendSuccess;
+}
+
+export function chechIfEventEdited(state) {
+  return state.eventForm.editedEvent;
+}
+
+export function checkIfEditingFinished(state) {
+  return state.eventForm.editingFinished;
 }

@@ -3,3 +3,4 @@ export const EVENT_CREATED = "eventForm.EVENT_CREATED";
 export const EVENT_VALIDATION_FAILED = "eventForm.EVENT_VALIDATION_FAILED";
 export const EVENT_EDITING_FINISHED = "eventForm.EVENT_EDITING_FINISHED";
 export const NEW_EVENT_CREATE = 'eventForm.NEW_EVENT_CREATE';
+export const START_EVENT_EDITING = 'eventForm.START_EVENT_EDITING';

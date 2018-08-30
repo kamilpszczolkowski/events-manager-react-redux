@@ -74,3 +74,25 @@ export const eventCreate = newEvent => {
 export const clearForm = () => {
   return { type: types.NEW_EVENT_CREATE };
 };
+
+export const startEventEditing = (event, id) => {
+  return {
+    type: types.START_EVENT_EDITING,
+    event,
+    id
+  };
+};
+
+export const sendEditedEvent = (event, eventId) => {
+  return dispatch => {
+    FirebaseService.changeEvent(
+      () => {
+        dispatch({
+          type: types.EVENT_EDITING_FINISHED
+        });
+      },
+      event,
+      eventId
+    );
+  };
+};
