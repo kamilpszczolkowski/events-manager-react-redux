@@ -1,5 +1,5 @@
 import FirebaseService from "../../services/FirebaseService";
-import * as types from "../eventForm/actionTypes";
+import * as types from ".//actionTypes";
 
 export const eventFetched = eventId => {
   return dispatch => {
@@ -15,18 +15,6 @@ export const eventFetched = eventId => {
 export const eventEditingRequest = () => {
   return {
     type: types.EVENT_CHANGE_REQUESTED
-  };
-};
-
-export const eventUpdated = (eventData, eventId) => {
-  return dispatch => {
-    FirebaseService.changeEvent(
-      () => {
-        dispatch({ type: types.EVENT_UPDATED });
-      },
-      eventData,
-      eventId
-    );
   };
 };
 

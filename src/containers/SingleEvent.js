@@ -6,11 +6,11 @@ import {
   EventDescription,
   EventDataButtons
 } from "../components";
-import { eventFetched } from "../store/eventForm/actions";
+import { eventFetched } from "../store/singleEvent/actions";
 import {
   getEventFetched,
   checkIfEventIsEdited
-} from "../store/eventForm/reducer";
+} from "../store/singleEvent/reducer";
 import EventDataButttons from "../components/EventDataButttons";
 
 class SingleEvent extends Component {
