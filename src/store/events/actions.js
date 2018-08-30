@@ -23,7 +23,7 @@ export const getUserPosition = () => {
       });
     } else {
       dispatch({
-
+        type: types.USER_POSITION_FAILURE
       })
     }
   };
