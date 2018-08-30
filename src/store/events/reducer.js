@@ -1,13 +1,18 @@
 import * as types from "./actionTypes";
 
 const initialState = {
-  eventsFetched: {}
+  eventsFetched: {},
+  userPos: false
 };
 
 export default function reduce(state = initialState, action = {}) {
   switch (action.type) {
     case types.EVENTS_FETCHED:
       return { ...state, eventsFetched: action.events };
+    case types.USER_POSITION_SET:
+      return { ...state, userPos: [action.position[0], action.position[1]] };
+    case types.USER_POSITION_FAILURE:
+      return { ...state, userPos: false };
     default:
       return state;
   }
@@ -64,12 +69,17 @@ export function getEventsFetched(state) {
   const searchPhraseLoCase = state.filters.searchText.toLowerCase();
   if (searchPhraseLoCase !== "") {
     filteredArray = sortedArray.filter(el => {
-      return el.name.toLowerCase().indexOf(searchPhraseLoCase) !== -1 ||
-          el.descShort.toLowerCase().indexOf(searchPhraseLoCase) !== -1 ||
-          el.type.toLowerCase().indexOf(searchPhraseLoCase) !== -1 ||
-          el.place.toLowerCase().indexOf(searchPhraseLoCase) !== -1;
-
+      return (
+        el.name.toLowerCase().indexOf(searchPhraseLoCase) !== -1 ||
+        el.descShort.toLowerCase().indexOf(searchPhraseLoCase) !== -1 ||
+        el.type.toLowerCase().indexOf(searchPhraseLoCase) !== -1 ||
+        el.place.toLowerCase().indexOf(searchPhraseLoCase) !== -1
+      );
     });
   } else filteredArray = sortedArray;
   return filteredArray;
+}
+
+export function checkUserPosition(state) {
+  return state.events.userPos;
 }

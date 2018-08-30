@@ -4,14 +4,16 @@ import { Template } from "../components/template";
 import * as filtersSelectors from "../store/filters/reducer";
 import * as eventSelectors from "../store/events/reducer";
 import { searchTextChanged, sortMethodChanged } from "../store/filters/actions";
-import { eventsFetched } from "../store/events/actions";
+import { eventsFetched, getUserPosition } from "../store/events/actions";
 import { InputField } from "../components/common";
 import { SortTab, EventTab } from "../components";
 
 class BrowseEvents extends Component {
   componentDidMount() {
     this.props.eventsFetched();
+    this.props.getUserPosition();
   }
+
   render() {
     const {
       searchText,
@@ -54,12 +56,18 @@ function mapStateToProps(state) {
   return {
     searchText: filtersSelectors.getCurrentSearchText(state),
     sortMethod: filtersSelectors.getCurrentSortMethod(state),
-    events: eventSelectors.getEventsFetched(state)
+    events: eventSelectors.getEventsFetched(state),
+    userPos: eventSelectors.checkUserPosition(state)
   };
 }
 
 function mapDispatchToProps() {
-  return { searchTextChanged, sortMethodChanged, eventsFetched };
+  return {
+    searchTextChanged,
+    sortMethodChanged,
+    eventsFetched,
+    getUserPosition
+  };
 }
 
 export default connect(

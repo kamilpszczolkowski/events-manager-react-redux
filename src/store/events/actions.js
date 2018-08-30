@@ -11,3 +11,20 @@ export const eventsFetched = () => {
     });
   };
 };
+
+export const getUserPosition = () => {
+  return dispatch => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        dispatch({
+          type: types.USER_POSITION_SET,
+          position: [position.coords.latitude, position.coords.longitude]
+        });
+      });
+    } else {
+      dispatch({
+
+      })
+    }
+  };
+};
