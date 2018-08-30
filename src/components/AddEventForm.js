@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 export default class AddEventForm extends Component {
   handleSubmit() {
-    this.props.eventCreate(this.props.event);
+    const { editingEvent, sendEditedEvent, event, eventCreate } = this.props;
+    if (editingEvent) {
+      sendEditedEvent(event, editingEvent);
+    } else {
+      eventCreate(event);
+    }
   }
 
   handleInputName(event) {
@@ -160,7 +164,10 @@ export default class AddEventForm extends Component {
           </label>
         </div>
         <div className="restrict">
-          <input type="submit" value="Wyślij" />
+          <input
+            type="submit"
+            value={this.props.editingEvent ? "Zakończ edycję" : "Wyślij"}
+          />
         </div>
       </form>
     );
