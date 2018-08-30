@@ -10,7 +10,7 @@ const EventDescription = ({ event }) => {
           <i>{organisation}</i>
         </h3>
       </section>
-      <p id="editedDesc">{desc}</p>
+      <p id="editedDesc" className="singleElDesc">{desc}</p>
     </div>
   );
 };
