@@ -8,3 +8,4 @@ export { default as AddEventForm } from "./AddEventForm";
 export { default as SendEventConfirm } from "./SendEventConfirm";
 export { default as DeleteEventPopup } from "./DeleteEventPopup";
 export { default as DeletedEventConfirm } from "./DeletedEventConfirm";
+export { default as EditedEventConfirm } from "./EditedEventConfirm";
