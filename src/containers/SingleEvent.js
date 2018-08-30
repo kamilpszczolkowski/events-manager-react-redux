@@ -13,6 +13,7 @@ import {
   eventDeleted
 } from "../store/singleEvent/actions";
 import * as singleEventSelectors from "../store/singleEvent/reducer";
+import { startEventEditing } from "../store/eventForm/actions";
 
 class SingleEvent extends Component {
   componentDidMount() {
@@ -26,7 +27,8 @@ class SingleEvent extends Component {
       eventDeleteRequest,
       eventDeleted,
       eventDeletedConfrim,
-      match
+      match,
+      startEventEditing
     } = this.props;
     if (Object.keys(event).length === 0) {
       return <h2>Wczytywanie</h2>;
@@ -38,6 +40,8 @@ class SingleEvent extends Component {
         <EventDataButttons
           event={event}
           eventDeleteRequest={eventDeleteRequestChange}
+          startEventEditing={startEventEditing}
+          eventId={match.params.id}
         />
         <DeleteEventPopup
           deletePopup={eventDeleteRequest}
@@ -68,7 +72,12 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps() {
-  return { eventFetched, eventDeleteRequestChange, eventDeleted };
+  return {
+    eventFetched,
+    eventDeleteRequestChange,
+    eventDeleted,
+    startEventEditing
+  };
 }
 
 export default connect(

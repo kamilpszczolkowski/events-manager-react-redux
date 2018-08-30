@@ -12,6 +12,12 @@ export default class EventDataButttons extends Component {
     this.props.eventDeleteRequest(true);
   }
 
+  handleEditBttn() {
+    const { startEventEditing, event, eventId } = this.props;
+    startEventEditing(event, eventId);
+    window.location.replace("#/addevents");
+  }
+
   render() {
     const { place, date, type } = this.props.event;
     return (
@@ -28,7 +34,10 @@ export default class EventDataButttons extends Component {
         </p>
         <h2>Typ wydarzenia</h2>
         <p id="editedType">{type}</p>
-        <button className="singleElBttn" onClick={this.handleEditBttn}>
+        <button
+          className="singleElBttn"
+          onClick={this.handleEditBttn.bind(this)}
+        >
           Edytuj wydarzenie
         </button>
         <button
