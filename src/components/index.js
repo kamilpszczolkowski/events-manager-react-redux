@@ -5,3 +5,5 @@ export { default as EventTab } from "./EventTab";
 export { default as EventImageSection } from "./EventImageSection";
 export { default as EventDescription } from "./EventDescription";
 export { default as EventDataButtons } from "./EventDataButttons";
+export { default as AddEventForm } from "./AddEventForm";
+export { default as SendEventConfirm } from "./SendEventConfirm";
