@@ -491,7 +491,8 @@ input[type=submit] {
   text-transform: uppercase;
   background-color: orange;
   border: 2px solid #724900;
-  transition: background-color 0.25s; }
+  transition: background-color 0.25s;
+  cursor: pointer; }
 
 input[type=submit]:hover {
   background-color: darkorange; }
