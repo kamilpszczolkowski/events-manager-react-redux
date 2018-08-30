@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Template } from "../components/template";
-import {
-  EventImageSection,
-  EventDescription,
-  EventDataButtons
-} from "../components";
+import { EventDescription, EventDataButtons } from "../components";
 import { eventFetched } from "../store/singleEvent/actions";
 import {
   getEventFetched,
@@ -19,21 +15,15 @@ class SingleEvent extends Component {
   }
 
   eventRenderHelperFunc() {
-    if ( Object.keys(this.props.event).length === 0) return <h2>Wczytywanie</h2>;
+    const { event, eventEdited } = this.props;
+    if (Object.keys(event).length === 0) {
+      return <h2>Wczytywanie</h2>;
+    }
     return (
       <div>
-        <EventImageSection
-          imgSrc={this.props.event.img}
-          editingMode={this.props.eventEdited}
-        />
-        <EventDescription
-          editingMode={this.props.eventEdited}
-          event={this.props.event}
-        />
-        <EventDataButttons
-          editingMode={this.props.eventEdited}
-          event={this.props.event}
-        />
+        <img className="singleEventImg" src={event.img} />
+        <EventDescription editingMode={eventEdited} event={event} />
+        <EventDataButttons editingMode={eventEdited} event={event} />
       </div>
     );
   }
@@ -41,7 +31,7 @@ class SingleEvent extends Component {
   render() {
     return (
       <Template activeSite="singleEvent">
-          {this.eventRenderHelperFunc()}
+        {this.eventRenderHelperFunc()}
       </Template>
     );
   }
