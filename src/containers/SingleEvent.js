@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Template } from "../components/template";
-import { EventDescription, EventDataButtons } from "../components";
-import { eventFetched } from "../store/singleEvent/actions";
 import {
-  getEventFetched,
-  checkIfEventIsEdited
-} from "../store/singleEvent/reducer";
-import EventDataButttons from "../components/EventDataButttons";
+  EventDescription,
+  EventDataButttons,
+  DeleteEventPopup,
+  DeletedEventConfirm
+} from "../components";
+import {
+  eventFetched,
+  eventDeleteRequestChange,
+  eventDeleted
+} from "../store/singleEvent/actions";
+import * as singleEventSelectors from "../store/singleEvent/reducer";
 
 class SingleEvent extends Component {
   componentDidMount() {
@@ -15,15 +20,32 @@ class SingleEvent extends Component {
   }
 
   eventRenderHelperFunc() {
-    const { event, eventEdited } = this.props;
+    const {
+      event,
+      eventDeleteRequestChange,
+      eventDeleteRequest,
+      eventDeleted,
+      eventDeletedConfrim,
+      match
+    } = this.props;
     if (Object.keys(event).length === 0) {
       return <h2>Wczytywanie</h2>;
     }
     return (
       <div>
         <img className="singleEventImg" src={event.img} />
-        <EventDescription editingMode={eventEdited} event={event} />
-        <EventDataButttons editingMode={eventEdited} event={event} />
+        <EventDescription event={event} />
+        <EventDataButttons
+          event={event}
+          eventDeleteRequest={eventDeleteRequestChange}
+        />
+        <DeleteEventPopup
+          deletePopup={eventDeleteRequest}
+          eventDeleteRequestChange={eventDeleteRequestChange}
+          eventDeleted={eventDeleted}
+          eventId={match.params.id}
+        />
+        <DeletedEventConfirm eventDeletedConfrim={eventDeletedConfrim} />
       </div>
     );
   }
@@ -39,13 +61,14 @@ class SingleEvent extends Component {
 
 function mapStateToProps(state) {
   return {
-    event: getEventFetched(state),
-    eventEdited: checkIfEventIsEdited(state)
+    event: singleEventSelectors.getEventFetched(state),
+    eventDeleteRequest: singleEventSelectors.checkIfEventDeleteRequested(state),
+    eventDeletedConfrim: singleEventSelectors.checkIfEventDeleted(state)
   };
 }
 
 function mapDispatchToProps() {
-  return { eventFetched };
+  return { eventFetched, eventDeleteRequestChange, eventDeleted };
 }
 
 export default connect(

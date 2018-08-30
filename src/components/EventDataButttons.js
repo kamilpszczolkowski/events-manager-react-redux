@@ -8,6 +8,10 @@ export default class EventDataButttons extends Component {
     return date.slice(11, 16);
   }
 
+  handleDeleteBttn() {
+    this.props.eventDeleteRequest(true);
+  }
+
   render() {
     const { place, date, type } = this.props.event;
     return (
@@ -15,8 +19,8 @@ export default class EventDataButttons extends Component {
         <h2>Miejsce</h2>
         <p id="editedPlace">{place}</p>
         <h2>Rozpoczęcie</h2>
-          {EventDataButttons.dateExtract(date[0], "begin")},{" "}
-          {EventDataButttons.dateExtract(date[0], "end")}
+        {EventDataButttons.dateExtract(date[0], "begin")},{" "}
+        {EventDataButttons.dateExtract(date[0], "end")}
         <h2>Zakończenie</h2>
         <p id="editedDateEnd">
           {EventDataButttons.dateExtract(date[1], "begin")},{" "}
@@ -24,6 +28,15 @@ export default class EventDataButttons extends Component {
         </p>
         <h2>Typ wydarzenia</h2>
         <p id="editedType">{type}</p>
+        <button className="singleElBttn" onClick={this.handleEditBttn}>
+          Edytuj wydarzenie
+        </button>
+        <button
+          className="singleElBttn"
+          onClick={this.handleDeleteBttn.bind(this)}
+        >
+          Usuń wydarzenie
+        </button>
       </div>
     );
   }
