@@ -9,14 +9,13 @@ export default class EditedEventConfirm extends Component {
       this.timeout = setTimeout(() => {
         window.location.href = "#/events/" + editingEvent;
       }, 3000);
-
       return (
         <div className="EventDeleted">
           <section>
             <h2>Zmiany zostały zapisane</h2>
             <p>Nastąpi przekierowanie do strony wydarzenia</p>
             <button>
-              <Link to={"#/events/" + editingEvent}>Idź do wydarzenia</Link>
+              <Link to={"/events/" + editingEvent}>Idź do wydarzenia</Link>
             </button>
           </section>
         </div>
