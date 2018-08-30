@@ -4,7 +4,7 @@ import { Template } from "../components/template";
 import {
   eventUpdate,
   eventCreate,
-  createNewEvent
+    clearForm
 } from "../store/eventForm/actions";
 import { AddEventForm, SendEventConfirm } from "../components";
 import * as eventFormSelectors from "../store/eventForm/reducer";
@@ -22,7 +22,7 @@ class AddEvent extends Component {
         />
         <SendEventConfirm
             eventSendSuccess={this.props.eventSendSuccess}
-            createNewEvent={this.props.createNewEvent}
+            createNewEvent={this.props.clearForm}
         />
       </Template>
     );
@@ -38,7 +38,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps() {
-  return { eventUpdate, eventCreate, createNewEvent };
+  return { eventUpdate, eventCreate, clearForm };
 }
 
 export default connect(

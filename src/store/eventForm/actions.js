@@ -71,6 +71,6 @@ export const eventCreate = newEvent => {
   };
 };
 
-export const createNewEvent = () => {
+export const clearForm = () => {
   return { type: types.NEW_EVENT_CREATE };
 };
