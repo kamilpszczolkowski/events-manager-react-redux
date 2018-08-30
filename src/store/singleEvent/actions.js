@@ -12,12 +12,6 @@ export const eventFetched = eventId => {
   };
 };
 
-export const eventEditingRequest = () => {
-  return {
-    type: types.EVENT_CHANGE_REQUESTED
-  };
-};
-
 export const eventDeleteRequestChange = val => {
   return {
     type: types.EVENT_DELETE_REQUESTED,
