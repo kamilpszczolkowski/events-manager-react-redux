@@ -9,7 +9,6 @@ export default class AddEventMap extends Component {
   loadMap() {
     if (this.props && this.props.google) {
       const { google } = this.props;
-      const maps = google.maps;
       const mapRef = this.refs.map;
       const node = ReactDOM.findDOMNode(mapRef);
       const map = new google.maps.Map(node, {
@@ -17,16 +16,34 @@ export default class AddEventMap extends Component {
         zoom: 6.5
       });
       const input = document.getElementById("pac-input");
-      let autocomplete = new google.maps.places.Autocomplete(input);
+      const autocomplete = new google.maps.places.Autocomplete(input);
       autocomplete.bindTo("bounds", map);
       map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-      let infowindow = new google.maps.InfoWindow();
-      let infowindowContent = document.getElementById("infowindow-content");
+      const infowindow = new google.maps.InfoWindow();
+      const infowindowContent = document.getElementById("infowindow-content");
       infowindow.setContent(infowindowContent);
-      let marker = new google.maps.Marker({
+      const marker = new google.maps.Marker({
         map: map
       });
+
+      if(this.props.googlePosId !== ''){
+        const markerPos = new google.maps.LatLng({
+          lat: Number(this.props.googleGeoLoc[1]),
+          lng: Number(this.props.googleGeoLoc[0])
+        });
+
+        marker.setPlace({
+          placeId: this.props.googlePosId,
+          location: markerPos
+        });
+
+        map.setCenter(markerPos);
+        map.setZoom(10);
+
+        input.value=this.props.place;
+      }
+
       marker.addListener("click", function() {
         infowindow.open(map, marker);
       });

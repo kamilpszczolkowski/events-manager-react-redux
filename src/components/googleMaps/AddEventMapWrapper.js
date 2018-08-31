@@ -4,11 +4,15 @@ import AddEventMap from "./AddEventMap";
 
 class AddEventMapApp extends Component {
   render() {
+    const { google, updateData, googlePosId, googleGeoLoc, place } = this.props;
     return (
       <div>
         <AddEventMap
-          google={this.props.google}
-          updateData={this.props.updateData}
+          google={google}
+          updateData={updateData}
+          googlePosId={googlePosId}
+          googleGeoLoc={googleGeoLoc}
+          place={place}
         />
       </div>
     );

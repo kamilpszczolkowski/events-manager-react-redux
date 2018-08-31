@@ -86,7 +86,10 @@ export default class AddEventForm extends Component {
       date,
       descShort,
       desc,
-      img
+      img,
+      googlePosId,
+      googleGeoLoc,
+      place
     } = this.props.event;
     return (
       <form onSubmit={this.handleSubmit.bind(this)}>
@@ -165,7 +168,12 @@ export default class AddEventForm extends Component {
           </label>
         </div>
         Lokalizacja wydarzenia:
-        <AddEventMapWrapper updateData={this.props.updateData}/>
+        <AddEventMapWrapper
+          updateData={this.props.updateData}
+          googlePosId={googlePosId}
+          googleGeoLoc={googleGeoLoc}
+          place={place}
+        />
         <div className="restrict">
           <input
             type="submit"
