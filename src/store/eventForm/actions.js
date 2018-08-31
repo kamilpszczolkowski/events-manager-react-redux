@@ -56,6 +56,12 @@ export const eventCreate = newEvent => {
   }
 
   if (validationErrors.length > 0) {
+    window.scrollTo({
+      behavior: "smooth",
+      left: 0,
+      top: 0
+    });
+
     return {
       type: types.EVENT_VALIDATION_FAILED,
       validationErrors
