@@ -15,7 +15,7 @@ export default function reduce(state = initialState, action = {}) {
     case types.EVENT_DELETED:
       return { ...state, eventDeleteSuccess: true };
     default:
-      return initialState;
+      return state;
   }
 }
 
