@@ -2,7 +2,8 @@ import * as types from "./actionTypes";
 
 const initialState = {
   eventsFetched: {},
-  userPos: false
+  userPos: false,
+  eventDistances: {}
 };
 
 export default function reduce(state = initialState, action = {}) {
@@ -13,6 +14,15 @@ export default function reduce(state = initialState, action = {}) {
       return { ...state, userPos: [action.position[0], action.position[1]] };
     case types.USER_POSITION_FAILURE:
       return { ...state, userPos: false };
+    case types.EVENT_DISTANCE_CALCULATED:
+      const eventsDistancesInside = state.eventDistances;
+      return {
+        ...state,
+        eventDistances: {
+          ...eventsDistancesInside,
+          [action.eventId]: action.distance
+        }
+      };
     default:
       return state;
   }
@@ -82,4 +92,8 @@ export function getEventsFetched(state) {
 
 export function checkUserPosition(state) {
   return state.events.userPos;
+}
+
+export function getEventDistances(state) {
+  return state.events.eventDistances;
 }

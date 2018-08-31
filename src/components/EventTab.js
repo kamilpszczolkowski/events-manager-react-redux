@@ -9,6 +9,29 @@ export default class EventTab extends Component {
     return date.slice(11, 16);
   }
 
+  distanceRenderHelperFunc() {
+    if (!isNaN(this.props.eventDistance)) {
+      return (
+        <p>
+          <strong>Odległość:</strong> {this.props.eventDistance.toFixed(2)} km
+        </p>
+      );
+    }
+    return null;
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.userPos && isNaN(nextProps.eventDistance)){
+      this.props.getEventDistance(
+        this.props.userPos[0],
+        this.props.userPos[1],
+        this.props.googlePos[1],
+        this.props.googlePos[0],
+        this.props.id
+      );
+    }
+  }
+
   render() {
     const {
       id,
@@ -20,7 +43,6 @@ export default class EventTab extends Component {
       type,
       date
     } = this.props;
-
     return (
       <article className="singleElement">
         <Link to={"/events/" + id}>
@@ -55,6 +77,7 @@ export default class EventTab extends Component {
                 {EventTab.dateExtract(date[1], "end")}
               </span>
             </p>
+            {this.distanceRenderHelperFunc()}
           </div>
         </Link>
       </article>

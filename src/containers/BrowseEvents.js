@@ -4,7 +4,7 @@ import { Template } from "../components/template";
 import * as filtersSelectors from "../store/filters/reducer";
 import * as eventSelectors from "../store/events/reducer";
 import { searchTextChanged, sortMethodChanged } from "../store/filters/actions";
-import { eventsFetched, getUserPosition } from "../store/events/actions";
+import { eventsFetched, getUserPosition, getEventDistance } from "../store/events/actions";
 import { InputField } from "../components/common";
 import { SortTab, EventTab } from "../components";
 
@@ -20,7 +20,10 @@ class BrowseEvents extends Component {
       searchTextChanged,
       sortMethod,
       sortMethodChanged,
-      events
+      events,
+      getEventDistance,
+      userPos,
+      eventDistances
     } = this.props;
     return (
       <Template activeSite="browseEvents">
@@ -44,6 +47,10 @@ class BrowseEvents extends Component {
               img={event.img}
               id={event.id}
               googlePos={event.googleGeoLoc}
+              distance={event.distance}
+              getEventDistance={getEventDistance}
+              userPos={userPos}
+              eventDistance={eventDistances[event.id]}
             />
           );
         })}
@@ -57,7 +64,8 @@ function mapStateToProps(state) {
     searchText: filtersSelectors.getCurrentSearchText(state),
     sortMethod: filtersSelectors.getCurrentSortMethod(state),
     events: eventSelectors.getEventsFetched(state),
-    userPos: eventSelectors.checkUserPosition(state)
+    userPos: eventSelectors.checkUserPosition(state),
+    eventDistances: eventSelectors.getEventDistances(state)
   };
 }
 
@@ -66,7 +74,8 @@ function mapDispatchToProps() {
     searchTextChanged,
     sortMethodChanged,
     eventsFetched,
-    getUserPosition
+    getUserPosition,
+    getEventDistance
   };
 }
 
