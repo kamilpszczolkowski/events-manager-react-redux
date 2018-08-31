@@ -14,6 +14,8 @@ export default function reduce(state = initialState, action = {}) {
       return { ...state, deleteRequested: action.val };
     case types.EVENT_DELETED:
       return { ...state, eventDeleteSuccess: true };
+    case types.EVENT_CLEARED:
+      return initialState;
     default:
       return state;
   }

@@ -11,7 +11,8 @@ import {
 import {
   eventFetched,
   eventDeleteRequestChange,
-  eventDeleted
+  eventDeleted,
+  eventCleared
 } from "../store/singleEvent/actions";
 import * as singleEventSelectors from "../store/singleEvent/reducer";
 import { startEventEditing } from "../store/eventForm/actions";
@@ -19,8 +20,10 @@ import { startEventEditing } from "../store/eventForm/actions";
 
 class SingleEvent extends Component {
   componentDidMount() {
+    this.props.eventCleared();
     this.props.eventFetched(this.props.match.params.id);
   }
+
 
   eventRenderHelperFunc() {
     const {
@@ -82,7 +85,8 @@ function mapDispatchToProps() {
     eventFetched,
     eventDeleteRequestChange,
     eventDeleted,
-    startEventEditing
+    startEventEditing,
+    eventCleared
   };
 }
 

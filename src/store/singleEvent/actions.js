@@ -26,3 +26,7 @@ export const eventDeleted = eventId => {
     }, eventId);
   };
 };
+
+export const eventCleared = () => {
+  return { type: types.EVENT_CLEARED };
+};
