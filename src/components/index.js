@@ -10,3 +10,4 @@ export { default as DeleteEventPopup } from "./DeleteEventPopup";
 export { default as DeletedEventConfirm } from "./DeletedEventConfirm";
 export { default as EditedEventConfirm } from "./EditedEventConfirm";
 export { default as EventMapWrapper } from "./googleMaps/EventMapWrapper";
+export { default as AllEventMapWrapper } from "./googleMaps/AllEventMapWrapper";
