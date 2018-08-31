@@ -5,7 +5,8 @@ import {
   EventDescription,
   EventDataButttons,
   DeleteEventPopup,
-  DeletedEventConfirm
+  DeletedEventConfirm,
+  EventMapWrapper
 } from "../components";
 import {
   eventFetched,
@@ -14,6 +15,7 @@ import {
 } from "../store/singleEvent/actions";
 import * as singleEventSelectors from "../store/singleEvent/reducer";
 import { startEventEditing } from "../store/eventForm/actions";
+
 
 class SingleEvent extends Component {
   componentDidMount() {
@@ -42,6 +44,10 @@ class SingleEvent extends Component {
           eventDeleteRequest={eventDeleteRequestChange}
           startEventEditing={startEventEditing}
           eventId={match.params.id}
+        />
+        <EventMapWrapper
+          googleId={event.googlePosId}
+          googlePos={event.googleGeoLoc}
         />
         <DeleteEventPopup
           deletePopup={eventDeleteRequest}
