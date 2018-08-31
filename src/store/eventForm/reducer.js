@@ -38,7 +38,7 @@ export default function reduce(state = initialState, action = {}) {
     case types.EVENT_EDITING_FINISHED:
       return { ...state, editingFinished: true };
     default:
-      return initialState;
+      return state;
   }
 }
 

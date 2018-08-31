@@ -22,6 +22,10 @@ class AddEvent extends Component {
     return <h2 className="addEventTitle">Kreator nowego wydarzenia</h2>;
   }
 
+  componentWillUnmount(){
+    this.props.clearForm();
+  }
+
   render() {
     const {
       editingEvent,
