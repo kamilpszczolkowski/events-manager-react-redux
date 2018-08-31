@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AddEventMapWrapper from "./googleMaps/AddEventMapWrapper";
 
 export default class AddEventForm extends Component {
   handleSubmit() {
@@ -163,6 +164,8 @@ export default class AddEventForm extends Component {
             />
           </label>
         </div>
+        Lokalizacja wydarzenia:
+        <AddEventMapWrapper updateData={this.props.updateData}/>
         <div className="restrict">
           <input
             type="submit"
