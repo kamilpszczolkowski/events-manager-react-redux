@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AddEventMapWrapper from "./googleMaps/AddEventMapWrapper";
+import AddEventMapWrapper from "../googleMaps/AddEventMapWrapper";
 
 export default class AddEventForm extends Component {
   handleSubmit() {

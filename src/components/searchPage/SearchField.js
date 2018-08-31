@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { InputField } from "./common";
+import { InputField } from "../common";
 
 export default class SearchField extends Component {
   handleSubmit = event => {
