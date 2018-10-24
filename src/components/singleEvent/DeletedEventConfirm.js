@@ -10,10 +10,10 @@ export default class DeletedEventConfirm extends Component {
       return (
         <div className="EventDeleted">
           <section>
-            <h2>Wydarzenie zostalo usunięte</h2>
-            <p>Nastąpi przekierowanie do strony głównej</p>
+            <h2>Event has been deleted</h2>
+            <p>You will be redirected to the home page</p>
             <button onClick={this.handleBttnClick}>
-              <Link to="/">Strona główna</Link>
+              <Link to="/">Home page</Link>
             </button>
           </section>
         </div>

@@ -6,13 +6,13 @@ const Navigation = ({ activeSite }) => {
     <nav>
       <ul>
         <li className={activeSite === "browseEvents" ? "active" : ""}>
-          <Link to="/events">Przeglądaj zdarzenia</Link>
+          <Link to="/events">Browse</Link>
         </li>
         <li className={activeSite === "addEvents" ? "active" : ""}>
-          <Link to="/addevents">Dodaj zdarzenie</Link>
+          <Link to="/addevents">Add event</Link>
         </li>
         <li className={activeSite === "map" ? "active" : ""}>
-          <Link to="/map">Mapa</Link>
+          <Link to="/map">Map of events</Link>
         </li>
       </ul>
     </nav>

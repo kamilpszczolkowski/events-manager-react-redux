@@ -6,12 +6,12 @@ export default class DeleteEventPopup extends Component {
       return (
         <div className="deleteEvent">
           <div className="deletePopUp">
-            <h2>Czy na pewno chcesz usunąć dane wydarzenie?</h2>
+            <h2>Do you really want to remove this event?</h2>
             <button onClick={this.handleConfirmDeleteBttn.bind(this)}>
-              Tak
+              Yes
             </button>
             <button onClick={this.handleNoConfirmmDeleteBttn.bind(this)}>
-              Nie
+              No
             </button>
           </div>
         </div>

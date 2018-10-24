@@ -97,34 +97,34 @@ export default class AddEventForm extends Component {
         {this.validationErrHelperFunc()}
         <div className="restrict">
           <label>
-            Nazwa wydarzenia:
+            Name of the event:
             <input
               type="text"
-              placeholder="Nazwa wydarzenia"
+              placeholder="Event name"
               value={name}
               onChange={this.handleInputName.bind(this)}
             />
           </label>
           <label>
-            Organizator wydarzenia:
+            Organisation:
             <input
               type="text"
-              placeholder="Organizator"
+              placeholder="Organisation"
               value={organisation}
               onChange={this.handleInputOrganisation.bind(this)}
             />
           </label>
           <label>
-            Rodzaj wydarzenia:
+            Type of the event:
             <input
               type="text"
-              placeholder="Typ wydarzenia"
+              placeholder="Event type"
               value={type}
               onChange={this.handleInputType.bind(this)}
             />
           </label>
           <label>
-            Data/godzina rozpoczęcia:
+            Start date/hour:
             <input
               type="datetime-local"
               value={date[0]}
@@ -132,7 +132,7 @@ export default class AddEventForm extends Component {
             />
           </label>
           <label>
-            Data/godzina zakończenia:
+            End date/hour:
             <input
               type="datetime-local"
               value={date[1]}
@@ -140,35 +140,35 @@ export default class AddEventForm extends Component {
             />
           </label>
           <label>
-            Skrócony opis wydarzenia:
+            Short description:
             <input
               type="text"
               id="shortInput"
-              placeholder="Krótki opis"
+              placeholder="Short description"
               value={descShort}
               onChange={this.handleInputDescShort.bind(this)}
             />
           </label>
           <label>
-            Pełny opis wydarzenia:
+            Full description:
             <textarea
-              placeholder="Pełny opis wydarzenia"
+              placeholder="Full description"
               value={desc}
               onChange={this.handleInputDesc.bind(this)}
             />
           </label>
           <label>
-            Adres URL obrazu:
+            Image URL address:
             <input
               type="text"
               id="imgInput"
-              placeholder="Adres URL obrazu"
+              placeholder="Image URL"
               value={img}
               onChange={this.handleInputImg.bind(this)}
             />
           </label>
         </div>
-        Lokalizacja wydarzenia:
+        Event location:
         <AddEventMapWrapper
           updateData={this.props.updateData}
           googlePosId={googlePosId}
@@ -178,7 +178,7 @@ export default class AddEventForm extends Component {
         <div className="restrict">
           <input
             type="submit"
-            value={this.props.editingEvent ? "Zakończ edycję" : "Wyślij"}
+            value={this.props.editingEvent ? "Chagne event data" : "Send"}
           />
         </div>
       </form>

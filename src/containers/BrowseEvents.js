@@ -28,7 +28,7 @@ class BrowseEvents extends Component {
     return (
       <Template activeSite="browseEvents">
         <InputField
-          placeholder="Czego szukasz?"
+          placeholder="What are you looking for?"
           id="searchInevents"
           value={searchText}
           onChangeFunc={searchTextChanged}

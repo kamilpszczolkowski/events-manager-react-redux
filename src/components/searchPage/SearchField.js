@@ -10,10 +10,10 @@ export default class SearchField extends Component {
   render() {
     return (
       <section className="search">
-        <h2>Znajdź najciekawsze wydarzenia w Polsce</h2>
+        <h2>Find interesting events in your region</h2>
         <form onSubmit={this.handleSubmit}>
           <InputField
-            placeholder="Czego szukasz?"
+            placeholder="What are you looking for?"
             id="mainSearch"
             value={this.props.textValue}
             onChangeFunc={this.props.textChange}

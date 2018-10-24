@@ -18,7 +18,7 @@ const Footer = ({ activeSite }) => {
       <div className="container">
         <strong className="footerTitle">Kamil Pszczółkowski @2018</strong>
         <span className="footerInfo">
-          Aplikacja do zarządzania wydarzeniami{" "}
+          Event's manager application
         </span>
         <FooterIcons />
       </div>

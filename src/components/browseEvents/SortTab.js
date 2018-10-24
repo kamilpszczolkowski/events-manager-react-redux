@@ -35,14 +35,14 @@ export default class SortTab extends Component {
     return (
       <section className="sortPanel">
         <div className="sortCol1">
-          <h2 id="sortTitle">Sortowanie:</h2>
+          <h2 id="sortTitle">Sort by:</h2>
         </div>
         <div className="sortCol2" onClick={this.handleNameClick}>
-          Nazwa
+          Name
           {this.nameHelperElement()}
         </div>
         <div className="sortCol3" onClick={this.handleDateClick}>
-          Data
+          Date
           {this.dateHelperElement()}
         </div>
       </section>

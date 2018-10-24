@@ -22,29 +22,29 @@ export default class EventDataButttons extends Component {
     const { place, date, type } = this.props.event;
     return (
       <div className="singleEventcol2">
-        <h2>Miejsce</h2>
+        <h2>Place</h2>
         <p id="editedPlace">{place}</p>
-        <h2>Rozpoczęcie</h2>
+        <h2>Start date</h2>
         {EventDataButttons.dateExtract(date[0], "begin")},{" "}
         {EventDataButttons.dateExtract(date[0], "end")}
-        <h2>Zakończenie</h2>
+        <h2>End date</h2>
         <p id="editedDateEnd">
           {EventDataButttons.dateExtract(date[1], "begin")},{" "}
           {EventDataButttons.dateExtract(date[1], "end")}
         </p>
-        <h2>Typ wydarzenia</h2>
+        <h2>Event type</h2>
         <p id="editedType">{type}</p>
         <button
           className="singleElBttn"
           onClick={this.handleEditBttn.bind(this)}
         >
-          Edytuj wydarzenie
+          Edit event
         </button>
         <button
           className="singleElBttn"
           onClick={this.handleDeleteBttn.bind(this)}
         >
-          Usuń wydarzenie
+          delete event
         </button>
       </div>
     );

@@ -13,7 +13,7 @@ export default class EventTab extends Component {
     if (!isNaN(this.props.eventDistance)) {
       return (
         <p>
-          <strong>Odległość:</strong> {this.props.eventDistance.toFixed(2)} km
+          <strong>Distance:</strong> {this.props.eventDistance.toFixed(2)} km
         </p>
       );
     }
@@ -53,25 +53,25 @@ export default class EventTab extends Component {
           </div>
           <div className="col1">
             <p>
-              <strong>Organizator:</strong> {organisation}
+              <strong>Organisation:</strong> {organisation}
             </p>
             <p>
-              <strong>Miejsce:</strong> {place}
+              <strong>Place:</strong> {place}
             </p>
             <p>
-              <strong>Kategoria:</strong> {type}
+              <strong>Category:</strong> {type}
             </p>
           </div>
           <div className="col2">
             <p>
-              <strong>Rozpoczęcie:</strong>{" "}
+              <strong>Start:</strong>{" "}
               <span className="elementDate">
                 {EventTab.dateExtract(date[0], "begin")},{" "}
                 {EventTab.dateExtract(date[0], "end")}
               </span>
             </p>
             <p>
-              <strong>Zakończenie:</strong>{" "}
+              <strong>End:</strong>{" "}
               <span className="elementDate">
                 {EventTab.dateExtract(date[1], "begin")},{" "}
                 {EventTab.dateExtract(date[1], "end")}

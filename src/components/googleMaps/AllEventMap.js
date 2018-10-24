@@ -45,7 +45,7 @@ export default class AllEventMap extends Component {
             "/>" +
             "<img " +
             imgSource +
-            ' alt="obrazek"/>' +
+            ' alt="picture"/>' +
             '<div class="mainElements">' +
             "<h2>" +
             events[element].name +
@@ -55,24 +55,24 @@ export default class AllEventMap extends Component {
             "</p>" +
             "</div>" +
             '<div class="col1">' +
-            "<p><strong>Organizator:</strong> " +
+            "<p><strong>Organisation:</strong> " +
             events[element].organisation +
             "</p>" +
-            "<p><strong>Miejsce:</strong> " +
+            "<p><strong>Place:</strong> " +
             events[element].place +
             "</p>" +
-            "<p><strong>Kategoria:</strong> " +
+            "<p><strong>Category:</strong> " +
             events[element].type +
             "</p>" +
             "</div>" +
             '<div class="col2">' +
-            '<p><strong>Rozpoczęcie:</strong> <span className="elementDate">' +
+            '<p><strong>Start:</strong> <span className="elementDate">' +
             events[element].date[0].slice(0, 10) +
             ", " +
             events[element].date[0].slice(11, 16) +
             "</span>" +
             "</p>" +
-            '<p><strong>Zakończenie:</strong> <span className="elementDate">' +
+            '<p><strong>End:</strong> <span className="elementDate">' +
             events[element].date[1].slice(0, 10) +
             ", " +
             events[element].date[1].slice(11, 16) +
