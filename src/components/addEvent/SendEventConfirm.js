@@ -10,12 +10,12 @@ export default class SendEventConfirm extends Component {
       return (
         <div className="validationPassed">
           <section className="validationPassedPrompt">
-            <h2>Wydarzenie zostalo dodane do bazy</h2>
+            <h2>Event was added to the database</h2>
             <button>
-              <Link to="/events">Przejdź do wydarzeń</Link>
+              <Link to="/events">Go to the events</Link>
             </button>
             <button onClick={this.hanldeBttnNewEvent.bind(this)}>
-              Dodaj kolejne wydarzenie
+              Add next event
             </button>
           </section>
         </div>

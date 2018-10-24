@@ -12,10 +12,10 @@ export default class EditedEventConfirm extends Component {
       return (
         <div className="EventDeleted">
           <section>
-            <h2>Zmiany zostały zapisane</h2>
-            <p>Nastąpi przekierowanie do strony wydarzenia</p>
+            <h2>Changes were saved</h2>
+            <p>You will be redirected to the event page</p>
             <button>
-              <Link to={"/events/" + editingEvent}>Idź do wydarzenia</Link>
+              <Link to={"/events/" + editingEvent}>Go to the event</Link>
             </button>
           </section>
         </div>
