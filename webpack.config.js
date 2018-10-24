@@ -8,7 +8,7 @@ module.exports = {
     filename: "./js/out.js",
     path: path.resolve(__dirname, "docs")
   },
-  mode: "development",
+  mode: "production",
   module: {
     rules: [
       {
