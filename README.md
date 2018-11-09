@@ -128,7 +128,7 @@ Site is still in development process. Few bugs can be encountered:
 
 - after deleting the event, automatic redirection accurs. In github pages page not found (404) sometimes occurs.
 
-## Future uptades!
+## Future uptades
 
 I'm going to develop few more functions for this project:
 
