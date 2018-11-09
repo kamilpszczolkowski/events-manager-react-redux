@@ -128,11 +128,11 @@ Site is still in development process. Few bugs can be encountered:
 
 - after deleting the event, automatic redirection accurs. In github pages page not found (404) sometimes occurs.
 
-## Future uptades
+## Future uptades!
 
 I'm going to develop few more functions for this project:
 
 - Login functionality - I'm going to use Firebase authentication option to allow users to log in by facebook/google account.
   Every user can add, modify and delete only his events.
 - Image hosting service - I want to use external API to create easy image hosting (Imgur/Firebase data storage). User
-  could import a picture from the browsing device to the events.
+  could import a picture from the browsing device to the events. 
